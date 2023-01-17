@@ -1,0 +1,21 @@
+video part  : 4
+bagian      : penutup
+
+note CLI :
+- untuk membuat file migration
+    php artisan make:migration nama_file
+
+- untuk menjalankan migrate
+    php artisan migrate
+
+- untuk membatalkan perintah migrate sebelumnya
+    php artisan migrate:roolback
+
+- untuk membuat model
+    php artisan make:model nama_file
+
+- untuk membuuat file seeder
+    php artisan make:seeder nama_file
+
+- untuk menjalankan seeder
+    php artisan db:seed --class=CategorySeeder
