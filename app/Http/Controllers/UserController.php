@@ -13,7 +13,6 @@ class UserController extends Controller
         //untuk logout
         // $request->session()->flush();
 
-        var_dump('halaman profile userC');
-        dd(Auth::user());
+        return view('profile');
     }
 }

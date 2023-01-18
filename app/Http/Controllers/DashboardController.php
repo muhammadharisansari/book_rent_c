@@ -13,7 +13,6 @@ class DashboardController extends Controller
         //untuk logout
         // $request->session()->flush();
 
-        var_dump('halaman index dashboardC');
-        dd(Auth::user());
+        return view('dashboard');
     }
 }
