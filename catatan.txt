@@ -1,5 +1,5 @@
-video part  : 6
-bagian      : styling active menu
+video part  : 7
+bagian      : menyimpan kategori ke database
 
 note CLI :
 - untuk membuat file migration

@@ -29,15 +29,15 @@
             <div class="row mt-2 sidebar">
                 {{-- <div class="list-group-flush "> --}}
                     @if (Auth::user()->role_id == 1)
-                    <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active" @endif >Dashboard</a>
-                    <a href="/categories" @if (request()->route()->uri == 'categories') class="active" @endif>Category</a>
-                    <a href="/users" @if (request()->route()->uri == 'users') class="active" @endif>User</a>
-                    <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
+                    <a href="dashboard" @if (request()->route()->uri == 'dashboard') class="active" @endif >Dashboard</a>
+                    <a href="categories" @if (request()->route()->uri == 'categories') class="active" @endif>Category</a>
+                    <a href="users" @if (request()->route()->uri == 'users') class="active" @endif>User</a>
+                    <a href="rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
                     @else
-                    <a href="/profile" @if (request()->route()->uri == 'profile') class="active" @endif>Profile</a>
+                    <a href="profile" @if (request()->route()->uri == 'profile') class="active" @endif>Profile</a>
                     @endif
-                    <a href="/books" @if (request()->route()->uri == 'books') class="active" @endif>Books</a>
-                    <a href="/logout" >Logout</a>
+                    <a href="books" @if (request()->route()->uri == 'books') class="active" @endif>Books</a>
+                    <a href="logout" >Logout</a>
                   {{-- </div> --}}
             </div>
         </div>
