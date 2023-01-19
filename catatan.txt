@@ -1,5 +1,5 @@
-video part  : 5
-bagian      : penutup
+video part  : 6
+bagian      : styling active menu
 
 note CLI :
 - untuk membuat file migration

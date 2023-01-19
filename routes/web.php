@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RentLogController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -33,6 +35,9 @@ Route::middleware('only_guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('logout', [AuthController::class, 'logout']);
     Route::get('books', [BookController::class, 'index']);
-    Route::get('dashboard', [DashboardController::class, 'index'])->middleware('only_admin');
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
+    Route::get('dashboard', [DashboardController::class, 'index'])->middleware('only_admin');
+    Route::get('categories', [CategoryController::class, 'index'])->middleware('only_admin');
+    Route::get('users', [UserController::class, 'index'])->middleware('only_admin');
+    Route::get('rent-logs', [RentLogController::class, 'index'])->middleware('only_admin');
 });

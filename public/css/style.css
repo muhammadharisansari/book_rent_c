@@ -1,0 +1,14 @@
+.sidebar a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 20px 10px;
+  }
+  .sidebar a:hover{
+    background: white;
+  }
+  .active{
+    background: rgb(247, 243, 243);
+    border-right: solid 8px orange;
+    color: black;
+  }

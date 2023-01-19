@@ -6,16 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rental Buku | @yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
     
 {{-- navbar --}}
 <nav class="navbar navbar-dark navbar-expand-lg bg-primary g-0">
     <div class="container-fluid">
-      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">RENTAL BUKU</a>
+      <a class="navbar-brand hover" href="#">RENTAL BUKU</a>
       <h5 class="text-light">{{Auth::user()->username}}</h5>
     </div>
   </nav>
@@ -23,29 +25,20 @@
 
     <div class="row g-0">
         {{-- sidebar --}}
-        <div class="col-lg-2 p-3 bg-info collapse d-lg-block" id="collapseExample">
-            <div class="row mt-2">
-                <div class="list-group-flush">
+        <div class="col-lg-2 p-3 bg-info collapse d-lg-block" id="navbarTogglerDemo01">
+            <div class="row mt-2 sidebar">
+                {{-- <div class="list-group-flush "> --}}
                     @if (Auth::user()->role_id == 1)
-                    <a href="/dashboard" class="list-group-item list-group-item-action">Dashboard</a>
-                    <hr>
-                    <a href="#" class="list-group-item list-group-item-action">Category</a>
-                    <hr>
-                    <a href="/books" class="list-group-item list-group-item-action">Books</a>
-                    <hr>
-                    <a href="#" class="list-group-item list-group-item-action">User</a>
-                    <hr>
-                    <a href="#" class="list-group-item list-group-item-action">Rent Log</a>
-                    <hr>
+                    <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active" @endif >Dashboard</a>
+                    <a href="/categories" @if (request()->route()->uri == 'categories') class="active" @endif>Category</a>
+                    <a href="/users" @if (request()->route()->uri == 'users') class="active" @endif>User</a>
+                    <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
                     @else
-                    <a href="/books" class="list-group-item list-group-item-action">Books</a>
-                    <hr>
-                    <a href="/profile" class="list-group-item list-group-item-action">Profile</a>
-                    <hr>
+                    <a href="/profile" @if (request()->route()->uri == 'profile') class="active" @endif>Profile</a>
                     @endif
-                    <a href="/logout" class="list-group-item list-group-item-action">Logout</a>
-                    <hr>
-                  </div>
+                    <a href="/books" @if (request()->route()->uri == 'books') class="active" @endif>Books</a>
+                    <a href="/logout" >Logout</a>
+                  {{-- </div> --}}
             </div>
         </div>
         {{-- endsidebar --}}
