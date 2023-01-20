@@ -46,6 +46,10 @@ Route::middleware('auth')->group(function () {
     Route::post('category-add', [CategoryController::class, 'store'])->middleware('only_admin');
     Route::get('category-edit/{slug}', [CategoryController::class, 'edit'])->middleware('only_admin');
     Route::patch('category-edit/{slug}', [CategoryController::class, 'update'])->middleware('only_admin');
+    Route::get('category-delete/{slug}', [CategoryController::class, 'delete'])->middleware('only_admin');
+    Route::get('category-destroy/{slug}', [CategoryController::class, 'destroy'])->middleware('only_admin');
+    Route::get('category-deleted', [CategoryController::class, 'deletedCategory'])->middleware('only_admin');
+    Route::get('category-restore/{slug}', [CategoryController::class, 'restore'])->middleware('only_admin');
 
     Route::get('users', [UserController::class, 'index'])->middleware('only_admin');
 

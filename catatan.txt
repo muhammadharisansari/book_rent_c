@@ -1,5 +1,5 @@
 video part  : 7
-bagian      : membuat fitur update
+bagian      : penutup
 
 note CLI :
 - untuk membuat file migration
