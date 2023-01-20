@@ -1,5 +1,5 @@
 video part  : 7
-bagian      : menyimpan kategori ke database
+bagian      : membuat fitur update
 
 note CLI :
 - untuk membuat file migration
@@ -19,3 +19,6 @@ note CLI :
 
 - untuk menjalankan seeder
     php artisan db:seed --class=CategorySeeder
+
+- plugin untuk slug
+    https://github.com/cviebrock/eloquent-sluggable

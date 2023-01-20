@@ -8,6 +8,13 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
+
+          @if (session('status'))
+            <div class=" mt-3 alert alert-success">
+                {{ session('status') }}
+            </div>
+          @endif
+
             <div class="container-fluid">
                 <table class="table">
                     <thead>
@@ -23,7 +30,7 @@
                               <td>{{$loop->iteration}}</td>
                               <td>{{$c->name}}</td>
                               <td>
-                                <a href="#" class="btn btn-info">update</a>
+                                <a href="category-edit/{{$c->slug}}" class="btn btn-info">update</a>
                                 <a href="#" class="btn btn-danger">delete</a>
                               </td>
                         </tr>
