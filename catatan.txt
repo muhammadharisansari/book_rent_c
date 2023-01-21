@@ -1,5 +1,5 @@
 video part  : 8
-bagian      : membuat validation
+bagian      : menambahkan kategori ke buku
 
 note CLI :
 - untuk membuat file migration
@@ -19,6 +19,10 @@ note CLI :
 
 - untuk menjalankan seeder
     php artisan db:seed --class=CategorySeeder
+
+- untuk file upload bisa diakses user
+    php artisan storage:link
+    (file sistem di .env ganti dari local menjadi public agar bisa menyimpan file ke folder public)
 
 - plugin untuk slug
     https://github.com/cviebrock/eloquent-sluggable

@@ -23,6 +23,7 @@
                         <th scope="col">No</th>
                         <th scope="col">Code</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
                       </tr>
@@ -33,6 +34,11 @@
                               <td>{{$loop->iteration}}</td>
                               <td>{{$b->book_code}}</td>
                               <td>{{$b->title}}</td>
+                              <td>
+                                @foreach ($b->categories as $c)
+                                    {{$c->name}},
+                                @endforeach
+                              </td>
                               <td>{{$b->status}}</td>
                               <td>
                                 <a href="#" class="btn btn-info">update</a>
