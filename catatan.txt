@@ -1,5 +1,5 @@
-video part  : 7
-bagian      : penutup
+video part  : 8
+bagian      : membuat validation
 
 note CLI :
 - untuk membuat file migration
