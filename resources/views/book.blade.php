@@ -41,7 +41,7 @@
                               </td>
                               <td>{{$b->status}}</td>
                               <td>
-                                <a href="#" class="btn btn-info">update</a>
+                                <a href="book-edit/{{$b->slug}}" class="btn btn-info">update</a>
                                 <a href="#" class="btn btn-danger">delete</a>
                               </td>
                         </tr>

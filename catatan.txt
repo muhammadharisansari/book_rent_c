@@ -1,5 +1,5 @@
 video part  : 8
-bagian      : menambahkan kategori ke buku
+bagian      : membuat fitur edit buku
 
 note CLI :
 - untuk membuat file migration

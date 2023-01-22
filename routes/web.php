@@ -38,6 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::get('books', [BookController::class, 'index']);
     Route::get('book-add', [BookController::class, 'add'])->middleware('only_admin');
     Route::post('book-add', [BookController::class, 'store'])->middleware('only_admin');
+    Route::get('book-edit/{slug}', [BookController::class, 'edit'])->middleware('only_admin');
+    Route::post('book-edit/{slug}', [BookController::class, 'update'])->middleware('only_admin');
 
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
 
