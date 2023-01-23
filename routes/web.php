@@ -40,6 +40,10 @@ Route::middleware('auth')->group(function () {
     Route::post('book-add', [BookController::class, 'store'])->middleware('only_admin');
     Route::get('book-edit/{slug}', [BookController::class, 'edit'])->middleware('only_admin');
     Route::post('book-edit/{slug}', [BookController::class, 'update'])->middleware('only_admin');
+    Route::get('book-delete/{slug}', [BookController::class, 'delete'])->middleware('only_admin');
+    Route::get('book-destroy/{slug}', [BookController::class, 'destroy'])->middleware('only_admin');
+    Route::get('book-deleted', [BookController::class, 'deletedBook'])->middleware('only_admin');
+    Route::get('book-restore/{slug}', [BookController::class, 'restore'])->middleware('only_admin');
 
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
 

@@ -1,5 +1,5 @@
 video part  : 8
-bagian      : membuat fitur edit buku
+bagian      : penutup
 
 note CLI :
 - untuk membuat file migration
