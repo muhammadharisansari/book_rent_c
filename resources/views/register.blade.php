@@ -54,7 +54,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary form-control mt-3">submit</button>
                             <div class="text-center mt-4">
-                                <a href="login" class="stretched-link text-info " style="position: relative;">login</a>
+                                <a href="/" class="stretched-link text-info " style="position: relative;">login</a>
                             </div>
                           </form>
                     </div>

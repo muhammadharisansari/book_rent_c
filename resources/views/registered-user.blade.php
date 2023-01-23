@@ -1,14 +1,10 @@
 @extends('layouts.mainlayout')
-@section('title','User')
+@section('title','Registered user')
 
 @section('content')
-    <h3>User client List</h3>
-    <div class="mt-3 d-flex justify-content-end">
-        <a href="/user-deleted" class="btn btn-secondary me-3">banned user</a>
-        <a href="/registered-users" class="btn btn-success">register user</a>
-    </div>
+    <h3>User Registered List</h3>
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 mt-5">
 
           @if (session('status'))
             <div class=" mt-3 alert alert-success">
@@ -40,7 +36,7 @@
                               </td>
                               <td>
                                 <a href="user-detail/{{$u->slug}}" class="btn btn-info">detail</a>
-                                <a href="user-ban/{{$u->slug}}" class="btn btn-danger">ban user</a>
+                                <a href="user-actived/{{$u->slug}}" class="btn btn-success">actived</a>
                             </td>
                         </tr>
                         @endforeach

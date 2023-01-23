@@ -4,8 +4,8 @@
 @section('content')
     <h3>Category List</h3>
     <div class="mt-3 d-flex justify-content-end">
-        <a href="category-deleted" class="btn btn-secondary me-3">view deleted data</a>
-        <a href="category-add" class="btn btn-success">Add Data</a>
+        <a href="/category-deleted" class="btn btn-secondary me-3">view deleted data</a>
+        <a href="/category-add" class="btn btn-success">Add Data</a>
     </div>
     <div class="row">
         <div class="col-lg-12">

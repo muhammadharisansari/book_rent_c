@@ -35,6 +35,10 @@ Route::middleware('only_guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('logout', [AuthController::class, 'logout']);
 
+    Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
+
+    Route::get('dashboard', [DashboardController::class, 'index'])->middleware('only_admin');
+
     Route::get('books', [BookController::class, 'index']);
     Route::get('book-add', [BookController::class, 'add'])->middleware('only_admin');
     Route::post('book-add', [BookController::class, 'store'])->middleware('only_admin');
@@ -44,10 +48,6 @@ Route::middleware('auth')->group(function () {
     Route::get('book-destroy/{slug}', [BookController::class, 'destroy'])->middleware('only_admin');
     Route::get('book-deleted', [BookController::class, 'deletedBook'])->middleware('only_admin');
     Route::get('book-restore/{slug}', [BookController::class, 'restore'])->middleware('only_admin');
-
-    Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
-
-    Route::get('dashboard', [DashboardController::class, 'index'])->middleware('only_admin');
 
     Route::get('categories', [CategoryController::class, 'index'])->middleware('only_admin');
     Route::get('category-add', [CategoryController::class, 'add'])->middleware('only_admin');
@@ -60,6 +60,8 @@ Route::middleware('auth')->group(function () {
     Route::get('category-restore/{slug}', [CategoryController::class, 'restore'])->middleware('only_admin');
 
     Route::get('users', [UserController::class, 'index'])->middleware('only_admin');
+    Route::get('registered-users', [UserController::class, 'registeredUser'])->middleware('only_admin');
+    Route::get('user-detail/{slug}', [UserController::class, 'show'])->middleware('only_admin');
 
     Route::get('rent-logs', [RentLogController::class, 'index'])->middleware('only_admin');
 });
