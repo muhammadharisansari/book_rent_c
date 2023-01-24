@@ -36,7 +36,6 @@
                               </td>
                               <td>
                                 <a href="user-detail/{{$u->slug}}" class="btn btn-info">detail</a>
-                                <a href="user-actived/{{$u->slug}}" class="btn btn-success">actived</a>
                             </td>
                         </tr>
                         @endforeach

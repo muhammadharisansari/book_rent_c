@@ -25,7 +25,9 @@
                     <input type="text" name="" id="" class="form-control" value="{{$user->status}}" readonly>
                 </div>
                 @if ($user->status == 'inactive')
-                        <a href="#" class="btn btn-success mb-5">Approve User</a>
+                    <div class="mt-3 mb-5 d-flex justify-content-end">
+                        <a href="/user-approve/{{$user->slug}}" class="btn btn-success mb-5">Approve User</a>
+                    </div>
                 @endif
             </div>
         </div>
