@@ -18,12 +18,17 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand hover" href="#">RENTAL BUKU</a>
+      @if (Auth::User())
       <h5 class="text-light">{{Auth::user()->username}}</h5>
+      @else
+      <h5 ><a href="/login" class="text-light" style="text-decoration: none;" >Login</a></h5>
+      @endif
     </div>
   </nav>
 {{-- endnavbar --}}
 
-    <div class="row g-0">
+<div class="row g-0">
+      @if (Auth::User())
         {{-- sidebar --}}
         <div class="col-lg-2 p-3 bg-info collapse d-lg-block" id="navbarTogglerDemo01">
             <div class="row mt-2 sidebar">
@@ -42,15 +47,20 @@
             </div>
         </div>
         {{-- endsidebar --}}
-        
+      @endif  
+
         {{-- content --}}
-        <div class="col-lg-10 ">
+        @if (Auth::User())
+          <div class="col-lg-10 ">
+        @else
+          <div class="col-lg-12 ">
+          @endif  
             <div class="row p-3">
                     @yield('content')
             </div>
         </div>
         {{-- endcontent --}}
-    </div>
+  </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
