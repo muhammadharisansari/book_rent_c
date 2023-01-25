@@ -50,7 +50,17 @@ class BookController extends Controller
     public function edit($slug)
     {
         $book['book'] = Book::where('slug', $slug)->first();
-        $categories['categories'] = Category::all();
+        
+        $hitung = $book['book']->categories->count();
+        $coba = $book['book']->categories;
+        
+        $simpan = [];
+        for ($i=0; $i < $hitung; $i++) { 
+           array_push($simpan,$coba[$i]->name);
+        }
+
+        $categories['categories'] = Category::whereNotIn('name',$simpan)->get();
+
         return view('book-edit', $categories, $book);
     }
 

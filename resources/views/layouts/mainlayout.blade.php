@@ -41,6 +41,7 @@
                     @else
                     <a href="/profile" @if (request()->route()->uri == 'profile') class="active" @endif>Profile</a>
                     @endif
+                    <a href="/" @if (request()->route()->uri == '/') class="active" @endif>List Books</a>
                     <a href="/books" @if (request()->route()->uri == 'books') class="active" @endif>Books</a>
                     <a href="/logout" >Logout</a>
                   {{-- </div> --}}

@@ -37,15 +37,13 @@
                     </div>
                     
                     <div class= "mb-3 ml-3">
-                        <label for="cat" class="form-label">Category ( current :
-                            @foreach ($book->categories as $item)
-                               {{$item->name}}, 
-                            @endforeach
-                        )
-                        </label>
+                        <label for="cat" class="form-label">Category </label>
                         
                         <select class="form-select select-multiple" name="categories[]" id="cat" aria-label="Default select example" multiple>
                             <option disabled>bisa lebih dari satu</option>
+                            @foreach ($book->categories as $item)
+                            <option value="{{$item->id}}" selected>{{$item->name}} </option> 
+                            @endforeach
                             @foreach ($categories as $c)
                             <option value="{{$c->id}}">{{$c->name}} </option>
                              @endforeach
