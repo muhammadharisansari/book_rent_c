@@ -6,7 +6,7 @@
 <div class="row mt-4">
     <div class="col-sm-4">
       <div class="card bg-primary bg-gradient text-white">
-        <div class="card-body">
+        <div class="card-body mb-4">
             <div class="row">
                 <div class="col-1">
                     <i class="bi bi-book-half"></i>
@@ -18,13 +18,13 @@
           <center>
               <h3>{{$book_count}}</h3>
           </center>
-          <a href="#" class="btn btn-info">detail</a>
+          {{-- <a href="#" class="btn btn-info">detail</a> --}}
         </div>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="card bg-primary bg-gradient text-white">
-        <div class="card-body">
+        <div class="card-body mb-4">
             <div class="row">
                 <div class="col-1">
                     <i class="bi bi-card-list"></i>
@@ -36,13 +36,13 @@
           <center>
               <h3>{{$category_count}}</h3>
           </center>
-          <a href="#" class="btn btn-info">detail</a>
+          {{-- <a href="#" class="btn btn-info">detail</a> --}}
         </div>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="card bg-primary bg-gradient text-white">
-        <div class="card-body">
+        <div class="card-body mb-4">
             <div class="row">
                 <div class="col-1">
                     <i class="bi bi-people"></i>
@@ -54,7 +54,7 @@
           <center>
               <h3>{{$user_count}}</h3>
           </center>
-          <a href="#" class="btn btn-info">detail</a>
+          {{-- <a href="#" class="btn btn-info">detail</a> --}}
         </div>
       </div>
     </div>

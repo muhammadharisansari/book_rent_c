@@ -12,7 +12,28 @@ class PublicController extends Controller
     public function index(Request $request)
     {
         
-        if ($request->category || $request->title) {
+        if ($request->category && $request->title == '') {
+            // hanya berdasar category
+            $books['books'] = Book::whereHas('categories', function($q) use($request){
+               $q->where('categories.id',$request->category);
+            })->get();
+
+        } elseif ($request->title) {
+            //hanya berdasar title
+            $books['books'] = Book::where('title','like','%'.$request->title.'%')->get();
+        
+        } elseif ($request->category && $request->title) {
+            // berdasar satu atau keduanya (categories adalah nama function relasi di model book)
+            // namun pencarian hanya dengan category terjadi bug (tidak terfilter)
+            $books['books'] = Book::where('title','like','%'.$request->title.'%')->orWhereHas('categories', function($q) use($request) {
+                $q->where('categories.id',$request->category);
+            })->get();
+        }else {
+            $books['books'] = Book::all();
+        }
+
+
+        // if ($request->category || $request->title) {
             //hanya berdasar title
             // $books['books'] = Book::where('title','like','%'.$request->title.'%')->get();
             
@@ -23,12 +44,12 @@ class PublicController extends Controller
 
             // berdasar satu atau keduanya (categories adalah nama function relasi di model book)
             // namun pencarian hanya dengan category terjadi bug (tidak terfilter)
-            $books['books'] = Book::where('title','like','%'.$request->title.'%')->orWhereHas('categories', function($q) use($request) {
-                $q->where('categories.id',$request->category);
-            })->get();
-        } else {
-            $books['books'] = Book::all();
-        }
+            // $books['books'] = Book::where('title','like','%'.$request->title.'%')->orWhereHas('categories', function($q) use($request) {
+            //     $q->where('categories.id',$request->category);
+            // })->get();
+        // } else {
+        //     $books['books'] = Book::all();
+        // }
         
         $cat['cat'] = Category::all();
         return view('book-list',$books,$cat);

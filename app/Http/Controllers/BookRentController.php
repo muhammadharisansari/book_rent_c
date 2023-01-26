@@ -45,6 +45,7 @@ class BookRentController extends Controller
             }
             else {
                 try {
+                    //penggunaan transaction memiliki syarat, name di form input harus sama dengan field table
                     DB::beginTransaction();
                     
                     // proses insert data ke tabel rent_log
