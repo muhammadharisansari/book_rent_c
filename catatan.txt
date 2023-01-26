@@ -1,4 +1,4 @@
-video part  : 11
+video part  : 12
 bagian      : penutup
 
 note CLI :

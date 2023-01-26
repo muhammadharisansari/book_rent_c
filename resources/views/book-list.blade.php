@@ -3,22 +3,23 @@
 
 @section('content')
 <div class="container">
-    <div class="row mt-5">
-        <form action="" method="get">
-            <div class="input-group mb-3">
-                <select class="form-select" name="category" id="inputGroupSelect02">
-                  <option selected disabled hidden>Choose category</option>
-                  @foreach ($cat as $c)
-                  <option value="{{$c->id}}">{{$c->name}}</option>
-                  @endforeach
-                  
-                </select>
-                <input type="text" class="form-control" name="title" placeholder="search title">
-                <button class="btn btn-primary" type="submit" for="inputGroupSelect02">Search</button>
-            </div>
-        </form>
+    <div class="row mt-5 d-flex justify-content-center">
+        <div class="row w-50 ">
+            <form action="" method="get">
+                <div class="input-group mb-3">
+                    <select class="form-select" name="category" id="inputGroupSelect02">
+                    <option selected disabled hidden>Choose category</option>
+                    @foreach ($cat as $c)
+                    <option value="{{$c->id}}">{{$c->name}}</option>
+                    @endforeach
+                    </select>
+                    <input type="text" class="form-control" name="title" placeholder="search title">
+                    <button class="btn btn-primary" type="submit" for="inputGroupSelect02">Search</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="row mt-3 ">
+    <div class="row mt-4 ">
         @foreach ($books as $u)
             <div class="col-lg-3 col-sm-6 mb-3">
                     <div class="card h-100">

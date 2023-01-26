@@ -14,9 +14,13 @@
 {{-- navbar --}}
 <nav class="navbar navbar-dark navbar-expand-lg bg-primary g-0">
     <div class="container-fluid">
+
+      @if (Auth::User())
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      @endif
+      
       <a class="navbar-brand hover" href="#">RENTAL BUKU</a>
       @if (Auth::User())
       <h5 class="text-light">{{Auth::user()->username}}</h5>
@@ -37,6 +41,7 @@
                     <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active" @endif >Dashboard</a>
                     <a href="/categories" @if (request()->route()->uri == 'categories') class="active" @endif>Category</a>
                     <a href="/users" @if (request()->route()->uri == 'users') class="active" @endif>User</a>
+                    <a href="/book-rent" @if (request()->route()->uri == 'book-rent') class="active" @endif>Book Rent</a>
                     <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
                     @else
                     <a href="/profile" @if (request()->route()->uri == 'profile') class="active" @endif>Profile</a>
