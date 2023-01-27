@@ -18,11 +18,14 @@ note CLI :
     php artisan make:seeder nama_file
 
 - untuk menjalankan seeder
-    php artisan db:seed --class=CategorySeeder
+    php artisan db:seed --class=nama_file
 
 - untuk file upload bisa diakses user
     php artisan storage:link
     (file sistem di .env ganti dari local menjadi public agar bisa menyimpan file ke folder public)
+
+- untuk membuat component sendiri
+    php artisan make:component nama_component
 
 - plugin untuk slug
     https://github.com/cviebrock/eloquent-sluggable

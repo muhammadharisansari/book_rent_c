@@ -5,8 +5,7 @@
     <h3>User Detail</h3>
     
     <div class="row mt-5">
-        <div class="col-lg-12 w-50">
-
+        <div class="col-lg-4">
             <div class="container-fluid ">
                 <div class="mb-3">
                     <label for="" class="form-label">Username</label>
@@ -30,6 +29,10 @@
                     </div>
                 @endif
             </div>
+        </div>
+
+        <div class="col-lg-8">
+            <x-rent-log-table :rentlog='$rentlogs'/>
         </div>
     </div>
 @endsection

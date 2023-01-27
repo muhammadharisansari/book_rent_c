@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\RentLogs;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +22,8 @@ class UserController extends Controller
         //untuk logout
         // $request->session()->flush();
 
-        return view('profile');
+        $rentlogs['rentlogs'] = RentLogs::with(['user','book'])->where('user_id', Auth::user()->id)->get();
+        return view('profile',$rentlogs);
     }
 
     public function registeredUser()
@@ -33,7 +35,8 @@ class UserController extends Controller
     public function show($slug)
     {
         $user['user'] = User::where('slug',$slug)->first();
-        return view('user-detail',$user);
+        $rentlogs['rentlogs'] = RentLogs::with(['user','book'])->where('user_id',$user['user']->id)->get();
+        return view('user-detail',$user,$rentlogs);
     }
 
     public function approve($slug)

@@ -42,12 +42,12 @@
                     <a href="/categories" @if (request()->route()->uri == 'categories') class="active" @endif>Category</a>
                     <a href="/users" @if (request()->route()->uri == 'users') class="active" @endif>User</a>
                     <a href="/book-rent" @if (request()->route()->uri == 'book-rent') class="active" @endif>Book Rent</a>
+                    <a href="/books" @if (request()->route()->uri == 'books') class="active" @endif>Books</a>
                     <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
                     @else
                     <a href="/profile" @if (request()->route()->uri == 'profile') class="active" @endif>Profile</a>
                     @endif
                     <a href="/" @if (request()->route()->uri == '/') class="active" @endif>List Books</a>
-                    <a href="/books" @if (request()->route()->uri == 'books') class="active" @endif>Books</a>
                     <a href="/logout" >Logout</a>
                   {{-- </div> --}}
             </div>

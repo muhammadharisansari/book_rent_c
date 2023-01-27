@@ -40,11 +40,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
 
-    Route::get('books', [BookController::class, 'index']);
-
+    
     Route::middleware('only_admin')->group(function () {
         Route::get('dashboard', [DashboardController::class, 'index']);
-
+        
+        Route::get('books', [BookController::class, 'index']);
         Route::get('book-add', [BookController::class, 'add']);
         Route::post('book-add', [BookController::class, 'store']);
         Route::get('book-edit/{slug}', [BookController::class, 'edit']);
@@ -75,7 +75,8 @@ Route::middleware('auth')->group(function () {
 
         Route::get('book-rent', [BookRentController::class,'index']);
         Route::post('book-rent', [BookRentController::class,'store']);
+
+        Route::get('rent-logs', [RentLogController::class, 'index']);
     }); 
 
-    Route::get('rent-logs', [RentLogController::class, 'index']);
 });

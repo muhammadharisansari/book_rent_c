@@ -16,7 +16,7 @@ class BookRentController extends Controller
 {
     public function index()
     {
-        $user['user']   = User::whereNot('role_id',1)->get(); 
+        $user['user']   = User::whereNot('role_id',1)->whereNot('status','inactive')->get(); 
         $book['book']   = Book::all();
         return view('book-rent',$user,$book);
     }
