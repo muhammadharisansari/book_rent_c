@@ -42,6 +42,7 @@
                     <a href="/categories" @if (request()->route()->uri == 'categories') class="active" @endif>Category</a>
                     <a href="/users" @if (request()->route()->uri == 'users') class="active" @endif>User</a>
                     <a href="/book-rent" @if (request()->route()->uri == 'book-rent') class="active" @endif>Book Rent</a>
+                    <a href="/rent-return" @if (request()->route()->uri == 'rent-return') class="active" @endif>Return Book</a>
                     <a href="/books" @if (request()->route()->uri == 'books') class="active" @endif>Books</a>
                     <a href="/rent-logs" @if (request()->route()->uri == 'rent-logs') class="active" @endif>Rent Log</a>
                     @else

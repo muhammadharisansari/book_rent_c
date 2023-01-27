@@ -1,5 +1,5 @@
-video part  : 13
-bagian      : penutup
+video part  : 14
+bagian      : penutup (done)
 
 note CLI :
 - untuk membuat file migration
