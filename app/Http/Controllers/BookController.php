@@ -12,6 +12,7 @@ class BookController extends Controller
     public function index()
     {
         $books['book'] = Book::all();
+        // $books['book'] = Book::where('id',2);
         return view('book', $books);
     }
 
