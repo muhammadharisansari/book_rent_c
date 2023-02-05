@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\RentLogs;
 use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
@@ -17,7 +18,7 @@ class DashboardController extends Controller
         $bookCount      = Book::count();
         $categoryCount  = Category::count();
         $userCount      = User::count();
-
-        return view('dashboard', ['book_count' => $bookCount, 'category_count' => $categoryCount, 'user_count' => $userCount]);
+        $rentlogs['rentlogs'] = RentLogs::with(['user','book'])->paginate(3);
+        return view('dashboard', $rentlogs, ['book_count' => $bookCount, 'category_count' => $categoryCount, 'user_count' => $userCount]);
     }
 }
